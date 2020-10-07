@@ -11,7 +11,6 @@ public class BookService {
 
     @Autowired
     private BookRepository bookRepository;
-
     /*
     Constructor Injection
     private BookRepository bookRepository;
@@ -20,13 +19,11 @@ public class BookService {
     this.bookRepository=bookRepository
     }
      */
-
-
-    public List<Book> getAllBooks(){
+    public List<Book> getAllBooks() {
         return bookRepository.findAll();
     }
 
-    public Book getBookById(Long id){
+    public Book getBookById(Long id) {
         /*
         Optional<Book> bookOptional=bookRepository.findById(id);
         if(bookOptional.isPresent()){
@@ -37,18 +34,12 @@ public class BookService {
          */
         return bookRepository.findById(id).get();
     }
-
-    public Book saveBook(Book book){
+    public Book saveBook(Book book) {
         return bookRepository.save(book);
     }
 
-    public String deleteBook(Long id){
+    public String deleteBook(Long id) {
         bookRepository.deleteById(id);
         return "Book deleted by id" + id;
     }
-
-
-
-
-
 }
