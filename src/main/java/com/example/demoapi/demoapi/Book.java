@@ -21,5 +21,5 @@ public class Book {
     @Column(name = "author")
     private String author;
 
-
+// entity for BOOK
 }
